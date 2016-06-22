@@ -28,6 +28,7 @@
     case CardTypeVisa:
       return CardIOCreditCardTypeVisa;
     case CardTypeMastercard:
+    case CardTypeMaestro:
       return CardIOCreditCardTypeMastercard;
     case CardTypeDiscover:
       return CardIOCreditCardTypeDiscover;
