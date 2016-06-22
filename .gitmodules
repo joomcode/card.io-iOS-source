@@ -1,3 +1,4 @@
 [submodule "dmz"]
 	path = dmz
 	url = git@github.com:pixty/card.io-dmz.git
+    branch = card-number-fix
