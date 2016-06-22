@@ -37,14 +37,14 @@
 }
 
 + (BOOL)passesLuhnChecksum:(NSString *)cardNumber {
-  uint8_t number_array[32];
+  uint8_t number_array[36];
   uint8_t length;
   [CardIOCreditCardNumber string:cardNumber toNumberArray:number_array withLength:&length];
   return dmz_passes_luhn_checksum(number_array, length);
 }
 
 + (CardIOCreditCardType)cardTypeForCardNumber:(NSString *)cardNumber {
-  uint8_t number_array[32];
+  uint8_t number_array[36];
   uint8_t length;
   [CardIOCreditCardNumber string:[CardIOCreditCardNumber stringByRemovingNonNumbers:cardNumber] toNumberArray:number_array withLength:&length];
   dmz_card_info card_info = dmz_card_info_for_prefix_and_length(number_array, length, true);
@@ -52,7 +52,7 @@
 }
 
 + (NSInteger)numberLengthForCardNumber:(NSString *)cardNumber {
-  uint8_t number_array[16];
+  uint8_t number_array[19];
   uint8_t length;
   [CardIOCreditCardNumber string:[CardIOCreditCardNumber stringByRemovingNonNumbers:cardNumber] toNumberArray:number_array withLength:&length];
   dmz_card_info card_info = dmz_card_info_for_prefix_and_length(number_array, length, true);

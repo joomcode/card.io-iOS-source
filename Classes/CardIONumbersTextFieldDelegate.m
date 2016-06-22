@@ -19,7 +19,7 @@
 - (id)init {
   if((self = [super init])) {
     self.numbersOnly = YES;
-    self.maxLength = 16;
+    self.maxLength = 19;
     _formatter = [[CardIOCreditCardNumberFormatter alloc] init];
   }
   return self;
@@ -68,7 +68,7 @@
   }
                              
   if(self.maxLength < 0 || [[CardIOCreditCardNumber stringbyRemovingSpaces:updatedText] length] > self.maxLength) {
-    self.maxLength = 16;
+    self.maxLength = 19;
     [CardIOConfigurableTextFieldDelegate vibrate];
     return NO;
   }
