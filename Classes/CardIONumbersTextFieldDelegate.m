@@ -70,6 +70,9 @@
   if(self.maxLength < 0 || [[CardIOCreditCardNumber stringbyRemovingSpaces:updatedText] length] > self.maxLength) {
     self.maxLength = 19;
     [CardIOConfigurableTextFieldDelegate vibrate];
+    if (self.willVibrateOnError) {
+      self.willVibrateOnError();
+    }
     return NO;
   }
 

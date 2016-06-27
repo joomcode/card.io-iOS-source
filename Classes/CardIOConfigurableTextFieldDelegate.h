@@ -15,6 +15,8 @@
 @property(nonatomic, assign, readwrite) BOOL numbersOnly;
 @property(nonatomic, assign, readwrite) NSInteger maxLength;
 
+@property(nonatomic, copy) void(^willVibrateOnError)();
+
 + (BOOL)containsNumbersOnly:(NSString *)newText;
 + (NSInteger)lengthOfString:(NSString *)originalText afterChangingCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 

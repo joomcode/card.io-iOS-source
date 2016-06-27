@@ -103,11 +103,17 @@
   if(self.numbersOnly &&
      ![[self class] containsNumbersOnly:newText]) {
     [CardIOConfigurableTextFieldDelegate vibrate];
+    if (self.willVibrateOnError) {
+      self.willVibrateOnError();
+    }    
     return NO;
   }
   if(self.maxLength > 0 &&
      self.maxLength < ([[self class] lengthOfString:aTextField.text afterChangingCharactersInRange:range replacementString:newText])) {
     [CardIOConfigurableTextFieldDelegate vibrate];
+    if (self.willVibrateOnError) {
+      self.willVibrateOnError();
+    }
     return NO;
   }
   return YES;

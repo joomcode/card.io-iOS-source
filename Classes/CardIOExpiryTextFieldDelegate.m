@@ -97,6 +97,9 @@
   if(updatedText.length > 7) {
     // 7 characters: "MM_/_YY"
     [CardIOConfigurableTextFieldDelegate vibrate];
+    if (self.willVibrateOnError) {
+      self.willVibrateOnError();
+    }
     return NO;
   }
   
@@ -107,10 +110,16 @@
     NSInteger month = [monthStr integerValue];
     if(month < 0 || month > 12) {
       [CardIOConfigurableTextFieldDelegate vibrate];
+      if (self.willVibrateOnError) {
+        self.willVibrateOnError();
+      }
       return NO;
     }
     if(monthStr.length >= 2 && month == 0) {
       [CardIOConfigurableTextFieldDelegate vibrate];
+      if (self.willVibrateOnError) {
+        self.willVibrateOnError();
+      }      
       return NO;
     }
   }
