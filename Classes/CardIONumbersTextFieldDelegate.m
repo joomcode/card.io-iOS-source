@@ -65,6 +65,8 @@
   CardIOCreditCardType cardType = [CardIOCreditCardNumber cardTypeForCardNumber:updatedText];
   if(cardType != CardIOCreditCardTypeUnrecognized && cardType != CardIOCreditCardTypeAmbiguous) {
     self.maxLength = [CardIOCreditCardNumber numberLengthForCardNumber:updatedText];
+  } else {
+    self.maxLength = 19;
   }
                              
   if(self.maxLength < 0 || [[CardIOCreditCardNumber stringbyRemovingSpaces:updatedText] length] > self.maxLength) {

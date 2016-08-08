@@ -109,7 +109,7 @@
   }
   NSString *numberWithoutSpaces = [CardIOCreditCardNumber stringByRemovingNonNumbers:number];
   NSUInteger numberLength = [numberWithoutSpaces length];
-  if ((cardType == CardIOCreditCardTypeUnrecognized && numberLength >= 14) ||
+  if ((cardType == CardIOCreditCardTypeUnrecognized && numberLength >= 12) ||
       (cardType != CardIOCreditCardTypeUnrecognized && numberLength == [CardIOCreditCardNumber numberLengthForCardNumber:number])) {
     if ([CardIOCreditCardNumber passesLuhnChecksum:numberWithoutSpaces]) {
       return YES;
