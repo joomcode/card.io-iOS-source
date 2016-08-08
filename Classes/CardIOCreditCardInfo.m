@@ -26,6 +26,9 @@
     case CardIOCreditCardTypeMastercard:
       result = CardIOLocalizedString(@"cardtype_mastercard", languageOrLocale); // MasterCard
       break;
+    case CardIOCreditCardTypeMaestro:
+      result = CardIOLocalizedString(@"cardtype_maestro", languageOrLocale); // Maestro
+      break;
     case CardIOCreditCardTypeDiscover:
       result = CardIOLocalizedString(@"cardtype_discover", languageOrLocale); // Discover
       break;
@@ -50,6 +53,7 @@
       imageName = @"icon_visa_large.png";
       break;
     case CardIOCreditCardTypeMastercard:
+    case CardIOCreditCardTypeMaestro:
       imageName = @"icon_mastercard_large.png";
       break;
     case CardIOCreditCardTypeDiscover:

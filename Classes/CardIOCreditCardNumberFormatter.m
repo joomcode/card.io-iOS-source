@@ -57,6 +57,7 @@
     case CardIOCreditCardTypeJCB:
     case CardIOCreditCardTypeVisa:
     case CardIOCreditCardTypeMastercard:
+    case CardIOCreditCardTypeMaestro:
     case CardIOCreditCardTypeDiscover:
       // work back to front to make index calculations easier
       if (numbersWithSpaces.length > 12) {
