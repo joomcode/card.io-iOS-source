@@ -264,7 +264,7 @@
       break;
     default:
       if (self.interfaceOrientation == (UIInterfaceOrientation)UIDeviceOrientationUnknown) {
-        CardIOPaymentViewController *vc = [CardIOPaymentViewController cardIOPaymentViewControllerForResponder:self.delegate];
+        CardIOPaymentViewController *vc = [CardIOPaymentViewController cardIOPaymentViewControllerForResponder:(UIResponder *)self.delegate];
         if (vc) {
           newInterfaceOrientation = vc.initialInterfaceOrientationForViewcontroller;
         }
